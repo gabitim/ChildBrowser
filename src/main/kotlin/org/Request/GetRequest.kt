@@ -10,7 +10,7 @@ class GetRequest(url : String) : GenericRequest(), HTTPGet {
         super.url = url
     }
 
-    // to be changed by proxy
+    // Proxy to verify the Request
     override fun genericRequest(name: String) : Unit {
         try {
             val request: CleanGetRequest = CleanGetRequest(url)
@@ -22,8 +22,12 @@ class GetRequest(url : String) : GenericRequest(), HTTPGet {
     }
 
     override fun getResponse(name:  String) {
-        println("VEEEEEry Safe request is proccesing: --->" + url)
+        println("VEEEEEry Safe request is proccesing: --->" + url + " status code: "+ khttp.get(url).statusCode)
+
+
 
         File(name).writeText(khttp.get(url).text)
+
+
     }
 }
