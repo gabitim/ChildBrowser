@@ -10,8 +10,10 @@ class PostRequest(url : String) : GenericRequest() {
     }
 
     override fun genericRequest(name: String) : Unit {
-        println(url + "request is proccesing")
+        println("Not safe request is proccesing: --->" + url)
 
         File(name).writeText(get(url).text)
     }
+
+
 }

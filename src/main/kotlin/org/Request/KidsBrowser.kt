@@ -25,5 +25,4 @@ object KidsBrowser {
         requests[url] = GetRequest(url)
         this.getReq(url).genericRequest(outputFileName)
     }
-
 }
